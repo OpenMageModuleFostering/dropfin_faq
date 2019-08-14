@@ -26,13 +26,13 @@
 <config>
     <modules>
         <Dropfin_Faq>
-            <version>1.0.0</version>
+            <version>1.0.1</version>
         </Dropfin_Faq>
     </modules>
     <default>
         <dropfin_faq>
             <general module="faq">
-                <enable>0</enable>
+                <enable>1</enable>
                 <category_option>1</category_option>
             </general>
         </dropfin_faq>

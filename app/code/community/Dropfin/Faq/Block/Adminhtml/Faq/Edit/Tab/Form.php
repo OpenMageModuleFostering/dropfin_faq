@@ -30,23 +30,13 @@ class Dropfin_Faq_Block_Adminhtml_Faq_Edit_Tab_Form extends Mage_Adminhtml_Block
         $this->setForm($form);
         $fieldset = $form->addFieldset('faq_form', array('legend'=>Mage::helper('faq')->__('Faq item information')));
 
-        if (!Mage::app()->isSingleStoreMode()) {
-            $storeId = $fieldset->addField('store_id', 'multiselect',
-                array (
-                    'name' => 'store_id[]', 
-                    'label' => Mage::helper('faq')->__('Store view'),
-                    'title' => Mage::helper('faq')->__('Store view'),
-                    'required' => true,
-                    'values' => Mage::getSingleton('adminhtml/system_store')->getStoreValuesForForm(false, true)
-                ));
-        } else {
-            $storeId = $fieldset->addField('store_id', 'hidden', 
-                array (
-                    'name' => 'store_id[]', 
-                    'value' => Mage::app()->getStore(true)->getId() 
-                ));
-            $model->setStoreId(Mage::app()->getStore(true)->getId());
-        }
+        $storeId = $fieldset->addField('store_id', 'multiselect', array (
+            'name' => 'store_id[]', 
+            'label' => Mage::helper('faq')->__('Store view'),
+            'title' => Mage::helper('faq')->__('Store view'),
+            'required' => true,
+            'values' => Mage::getSingleton('adminhtml/system_store')->getStoreValuesForForm(false, true)
+        ));
 
         $categories = Mage::getModel('faq/category')->getCollection()
                         ->addFieldToFilter('status', array('eq' => 1))

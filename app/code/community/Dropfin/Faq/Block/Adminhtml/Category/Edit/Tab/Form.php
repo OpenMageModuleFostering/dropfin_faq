@@ -53,23 +53,13 @@ class Dropfin_Faq_Block_Adminhtml_Category_Edit_Tab_Form extends Mage_Adminhtml_
             'name'      => 'display_order',
         ));
 
-        if (!Mage::app()->isSingleStoreMode()) {
-            $store_id = $fieldset->addField('store_id', 'multiselect',
-                array (
-                    'name' => 'store_id[]', 
-                    'label' => Mage::helper('faq')->__('Store view'),
-                    'title' => Mage::helper('faq')->__('Store view'),
-                    'required' => true,
-                    'values' => Mage::getSingleton('adminhtml/system_store')->getStoreValuesForForm(false, true)
-                ));
-        } else {
-            $store_id = $fieldset->addField('store_id', 'hidden', 
-                array (
-                    'name' => 'store_id[]', 
-                    'value' => Mage::app()->getStore(true)->getId() 
-                ));
-            $model->setStoreId(Mage::app()->getStore(true)->getId());
-        }
+        $store_id = $fieldset->addField('store_id', 'multiselect', array (
+            'name' => 'store_id[]',
+            'label' => Mage::helper('faq')->__('Store view'),
+            'title' => Mage::helper('faq')->__('Store view'),
+            'required' => true,
+            'values' => Mage::getSingleton('adminhtml/system_store')->getStoreValuesForForm(false, true)
+        ));
 
         $fieldset->addField('status', 'select', array(
             'label'     => Mage::helper('faq')->__('Status'),
