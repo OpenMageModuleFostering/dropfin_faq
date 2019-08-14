@@ -1,0 +1,5 @@
+.faq-content .category-list { margin-bottom: 15px; border-bottom: 1px solid #ededed; }
+.faq-content .category-list.last { border-bottom: none; margin-bottom: 0px; }
+.faq-content .category-list .category-content { margin-bottom: 15px; }
+.faq-content .category-list .accordion-content { padding-bottom: 15px; }
+.no-item-available { text-align: center; }
