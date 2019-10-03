@@ -1,16 +1,19 @@
 {
-    "name": "OpenMageModuleFostering/Dropfin_Faq",
+    "name": "OpenMageModuleFostering\/Dropfin_Faq",
     "type": "magento-module",
     "license": "OSL-v3.0",
     "homepage": "",
     "description": "FAQ Extension",
     "authors": [
-    {
-        "name": "Dropfin",
-        "email": "t.balamani88@gmail.com"
-    }
-],
+        {
+            "name": "Dropfin",
+            "email": "t.balamani88@gmail.com"
+        }
+    ],
     "suggest": {
-        "magento-hackathon/magento-composer-installer": "*"
-    }
+        "magento-hackathon\/magento-composer-installer": "*"
+    },
+    "keywords": [
+        "openmage-module"
+    ]
 }
